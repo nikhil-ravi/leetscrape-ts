@@ -8,11 +8,11 @@ This is a companion template for the [Leetscrape](https://www.github.com/nikhil-
 
 ### Standalone usage
 
-1. First, clone this repository:
+1. First, bootstrap a Next.js app using create-next-app and this template:
 
-   ```bash
-   git clone https://www.github.com/nikhil-ravi/leetscrape-ts
-   ```
+    ```bash
+    npx create-next-app -e https://www.github.com/nikhil-ravi/leetscrape-ts
+    ```
 
 2. Then, install dependencies:
 
@@ -42,12 +42,20 @@ This is a companion template for the [Leetscrape](https://www.github.com/nikhil-
 4. Populate an `.env.local` file using example [`.env.example`](.env.example) file:
     
     ```.env
-    NEXT_PUBLIC_SITE_URL=
-    NEXT_PUBLIC_AUTHOR_NAME=
-    NEXT_PUBLIC_SITE_NAME=
+    NEXT_PUBLIC_SITE_URL=http://localhost:3000
+    NEXT_PUBLIC_AUTHOR_NAME=Nikhil Ravi
+    NEXT_PUBLIC_SITE_NAME=ScuffedCode
     ```
 
-5. Populate the external links that appear in the nav bar in the [external-links.ts](./src/content/external-links.ts) file.
+5. Populate the external links that appear in the nav bar in the [external-links.ts](./src/content/external-links.ts) file:
+    ```ts
+    export default {
+        github: "https://github.com/nikhil-ravi",
+        linkedin: "https://www.linkedin.com/in/nikhil--ravi/",
+        <!-- Add more links -->
+    } as const;
+
+    ```
 
 6. Then, run the development server:
 
